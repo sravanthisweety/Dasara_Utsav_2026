@@ -1,0 +1,2772 @@
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fff8e9;
+    color: #4a1f0d;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 18px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(55, 20, 8, 0.96);
+
+    z-index: 1000;
+}
+
+.logo {
+    color: #ffd36a;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #ffd36a;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, #8f360d 0%, transparent 35%),
+        radial-gradient(circle at 80% 30%, #d87916 0%, transparent 35%),
+        linear-gradient(135deg, #421609, #9e4216, #d47718);
+
+    padding: 120px 20px 80px;
+}
+
+
+/* Decorative glow */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 205, 90, 0.18);
+
+    filter: blur(10px);
+
+    top: 15%;
+    right: -150px;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 153, 50, 0.15);
+
+    bottom: -150px;
+    left: -100px;
+}
+
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(30, 8, 2, 0.15),
+            rgba(30, 8, 2, 0.35)
+        );
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    color: white;
+}
+
+.festival-small {
+    color: #ffd36a;
+
+    font-size: 18px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 8vw, 90px);
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #ffd36a;
+}
+
+.hero-description {
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+}
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 16px 32px;
+
+    border-radius: 50px;
+
+    background: #ffd36a;
+
+    color: #4a1f0d;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-5px);
+
+    background: white;
+}
+
+
+/* Floating flowers */
+
+.flower {
+    position: absolute;
+
+    font-size: 50px;
+
+    z-index: 2;
+
+    animation: floatFlower 4s ease-in-out infinite;
+}
+
+.flower-one {
+    top: 20%;
+    left: 8%;
+}
+
+.flower-two {
+    top: 65%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.flower-three {
+    bottom: 10%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+@keyframes floatFlower {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+
+/* ================= COMMON SECTIONS ================= */
+
+.section {
+    padding: 100px 8%;
+}
+
+.section-label {
+    text-align: center;
+
+    color: #b84c12;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.section h2,
+.countdown-section h2 {
+    text-align: center;
+
+    font-size: 45px;
+
+    color: #74280c;
+
+    margin-bottom: 25px;
+}
+
+.section-text {
+    max-width: 800px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #704735;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: #fff8e9;
+}
+
+.about-cards {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.about-card {
+    background: #fffdf7;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    border: 1px solid #f0d29a;
+
+    box-shadow: 0 10px 30px rgba(80, 30, 5, 0.08);
+
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    font-size: 50px;
+
+    margin-bottom: 20px;
+}
+
+.about-card h3 {
+    color: #9d3c0d;
+
+    margin-bottom: 15px;
+
+    font-size: 25px;
+}
+
+.about-card p {
+    line-height: 1.7;
+
+    color: #76503c;
+}
+
+
+/* ================= NAVARATRI ================= */
+
+.navaratri {
+    background: #f8e8c9;
+}
+
+.days-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.day-card {
+    background: #fffaf0;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    border: 1px solid #e8c98f;
+
+    transition: 0.3s;
+}
+
+.day-card:hover {
+    transform: translateY(-7px);
+
+    background: #fff;
+}
+
+.day-card span {
+    display: inline-flex;
+
+    width: 45px;
+    height: 45px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #9c350c;
+
+    color: white;
+
+    margin-bottom: 15px;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+}
+
+.day-card h3 {
+    color: #8c320d;
+
+    margin-bottom: 8px;
+}
+
+.day-card p {
+    color: #98705c;
+}
+/* Navaratri day card images */
+
+.day-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 0 0 15px 0;
+}
+
+
+/* ================= TRADITIONS ================= */
+
+.traditions {
+    background: #fff8e9;
+}
+
+.tradition-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.tradition {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: #fffdf8;
+
+    border-radius: 18px;
+
+    border: 1px solid #efd49d;
+
+    transition: 0.3s;
+}
+
+.tradition:hover {
+    transform: translateY(-8px);
+}
+
+.tradition-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.tradition h3 {
+    color: #91330d;
+
+    margin-bottom: 12px;
+}
+
+.tradition p {
+    line-height: 1.6;
+
+    color: #76503c;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery {
+    background: #f8e8c9;
+}
+
+.gallery-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-placeholder {
+    height: 230px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 75px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a6420e,
+            #e29a2b
+        );
+
+    box-shadow: 0 10px 25px rgba(80, 30, 5, 0.18);
+
+    transition: 0.3s;
+}
+
+.gallery-placeholder:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item p {
+    margin-top: 12px;
+
+    font-weight: bold;
+
+    color: #74300e;
+}
+
+
+/* ================= COUNTDOWN ================= */
+
+.countdown-section {
+    padding: 100px 8%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #421609,
+            #8e330c
+        );
+
+    color: white;
+}
+
+.countdown-section h2 {
+    color: #ffd36a;
+}
+
+.countdown {
+    max-width: 800px;
+
+    margin: 45px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.countdown div {
+    padding: 25px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,211,106,0.3);
+
+    border-radius: 15px;
+}
+
+.countdown span {
+    display: block;
+
+    font-size: 45px;
+
+    font-weight: bold;
+
+    color: #ffd36a;
+}
+
+.countdown small {
+    font-size: 14px;
+
+    color: white;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background: #2e1006;
+
+    color: white;
+}
+
+.footer-logo {
+    color: #ffd36a;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 8px;
+}
+
+.copyright {
+    color: #cda98b;
+
+    font-size: 14px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .navbar nav {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .days-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tradition-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+
+    .days-container,
+    .tradition-grid,
+    .gallery-grid,
+    .countdown {
+        grid-template-columns: 1fr;
+    }
+
+    .section h2,
+    .countdown-section h2 {
+        font-size: 34px;
+    }
+
+    .flower {
+        font-size: 35px;
+    }
+}
+
+
+
+/* ================= SCROLL ANIMATIONS ================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Cards slightly more dramatic */
+
+.about-card.reveal,
+.day-card.reveal,
+.tradition.reveal,
+.gallery-item.reveal {
+    transform: translateY(40px) scale(0.96);
+}
+
+.about-card.reveal.show,
+.day-card.reveal.show,
+.tradition.reveal.show,
+.gallery-item.reveal.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+/* Stagger effect */
+
+.about-card:nth-child(2),
+.day-card:nth-child(2),
+.tradition:nth-child(2),
+.gallery-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.about-card:nth-child(3),
+.day-card:nth-child(3),
+.tradition:nth-child(3),
+.gallery-item:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.day-card:nth-child(4),
+.tradition:nth-child(4),
+.gallery-item:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+
+/* ================= BATHUKAMMA SECTION ================= */
+
+.bathukamma-section {
+    background: #fff7e8;
+    padding: 100px 8%;
+    overflow: hidden;
+}
+
+.bathukamma-content {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.bathukamma-text h2 {
+    font-size: 42px;
+    color: #7b2d12;
+    margin: 15px 0 20px;
+}
+
+.bathukamma-text > p {
+    color: #6b4938;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.bathukamma-points {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.bathukamma-points div {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(100, 50, 20, 0.1);
+}
+
+.bathukamma-points span {
+    font-size: 30px;
+}
+
+.bathukamma-points h3 {
+    color: #8f360d;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.bathukamma-points p {
+    font-size: 13px;
+    color: #765848;
+    line-height: 1.5;
+}
+
+.bathukamma-visual {
+    min-height: 400px;
+    border-radius: 30px;
+    background:
+        radial-gradient(circle, #f6b73c 0 8%, transparent 9%),
+        linear-gradient(135deg, #7b2d12, #c65b18);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: 0 15px 35px rgba(100, 40, 10, 0.25);
+}
+
+.flower-circle {
+    font-size: 100px;
+    position: relative;
+    margin-bottom: 20px;
+}
+/* ================= BATHUKAMMA MOBILE FIX ================= */
+
+@media (max-width: 768px) {
+
+    .bathukamma-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .bathukamma-text {
+        width: 100%;
+    }
+
+    .bathukamma-visual {
+        width: 100%;
+        text-align: center;
+    }
+
+    .bathukamma-art {
+        width: 220px;
+        height: 210px;
+        margin: 0 auto 25px;
+    }
+
+    .layer-1 {
+        width: 200px;
+    }
+
+    .layer-2 {
+        width: 175px;
+    }
+
+    .layer-3 {
+        width: 150px;
+    }
+
+    .layer-4 {
+        width: 120px;
+    }
+
+    .layer-5 {
+        width: 90px;
+    }
+
+    .flower-circle span {
+        font-size: 28px;
+    }
+
+    .bathukamma-text h2 {
+        font-size: 28px;
+    }
+
+    .bathukamma-points {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================= BATHUKAMMA ART ================= */
+
+.bathukamma-art {
+    width: 260px;
+    height: 230px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.flower-layer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+}
+
+.layer-1 {
+    width: 230px;
+    height: 65px;
+    bottom: 10px;
+    background: #f4a51c;
+}
+
+.layer-2 {
+    width: 200px;
+    height: 58px;
+    bottom: 55px;
+    background: #d94b22;
+}
+
+.layer-3 {
+    width: 170px;
+    height: 52px;
+    bottom: 95px;
+    background: #f6c43c;
+}
+
+.layer-4 {
+    width: 135px;
+    height: 45px;
+    bottom: 130px;
+    background: #e76f24;
+}
+
+.layer-5 {
+    width: 100px;
+    height: 38px;
+    bottom: 160px;
+    background: #f3b51b;
+}
+
+.bathukamma-top {
+    position: absolute;
+    top: 5px;
+    font-size: 45px;
+    z-index: 5;
+    animation: flowerFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes flowerFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.flower-circle span {
+    position: absolute;
+    font-size: 35px;
+}
+
+.flower-circle span:nth-child(1) {
+    top: -20px;
+    left: -35px;
+}
+
+.flower-circle span:nth-child(2) {
+    top: 10px;
+    right: -45px;
+}
+
+.flower-circle span:nth-child(3) {
+    bottom: -10px;
+    left: -45px;
+}
+
+.flower-circle span:nth-child(4) {
+    bottom: -20px;
+    right: -35px;
+}
+
+.flower-circle span:nth-child(5) {
+    top: 70px;
+    left: -55px;
+}
+
+.bathukamma-visual h3 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.bathukamma-visual p {
+    opacity: 0.9;
+}
+
+/* ================= INTERACTIVE NAVARATRI ================= */
+
+.day-card {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-family: inherit;
+    transition: 0.3s ease;
+}
+
+.day-card:hover {
+    transform: translateY(-8px);
+}
+
+.day-card.active {
+    transform: translateY(-8px);
+    border: 3px solid #d89b25;
+    box-shadow: 0 12px 30px rgba(120, 50, 15, 0.25);
+}
+
+.day-number {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #b56a17;
+    font-weight: bold;
+}
+
+.day-card p {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #8f5a3c;
+}
+
+.day-details {
+    max-width: 850px;
+    margin: 40px auto 0;
+    padding: 35px;
+    text-align: center;
+    background: #fff7e8;
+    border-radius: 25px;
+    border: 2px solid #e5b75c;
+    box-shadow: 0 10px 25px rgba(100, 50, 20, 0.12);
+    transition: 0.4s ease;
+}
+
+.day-details span {
+    color: #b56a17;
+    font-weight: bold;
+}
+
+.day-details h2 {
+    margin: 10px 0;
+    color: #7b2d12;
+    font-size: 30px;
+}
+
+.day-details p {
+    color: #6b4938;
+    line-height: 1.7;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.day-card {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.day-details {
+    max-width: 850px;
+    margin: 40px auto 0;
+    padding: 35px;
+    text-align: center;
+    background: #fff7e8;
+    border-radius: 25px;
+    border: 2px solid #e5b75c;
+    box-shadow: 0 10px 25px rgba(100, 50, 20, 0.12);
+}
+
+.day-details span {
+    color: #b56a17;
+    font-weight: bold;
+}
+
+.day-details h2 {
+    margin: 10px 0;
+    color: #7b2d12;
+    font-size: 30px;
+}
+
+.day-details p {
+    color: #6b4938;
+    line-height: 1.7;
+}
+/* ================= NAVARATRI FINAL LAYOUT ================= */
+
+.days-container {
+    display: block !important;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.days-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+.day-card {
+    width: 100% !important;
+    min-width: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    /* wide card shape */
+    aspect-ratio: 19 / 6;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* Hover */
+.day-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(123, 45, 18, 0.22);
+}
+
+/* Active */
+.day-card.active {
+    transform: translateY(-7px);
+    border: 2px solid #d89b25;
+    box-shadow:
+        0 0 12px rgba(216, 155, 37, 0.55),
+        0 0 25px rgba(216, 155, 37, 0.3);
+}
+
+/* Details BELOW cards */
+.day-details {
+    width: 100%;
+    max-width: 850px;
+    margin: 40px auto 0;
+    box-sizing: border-box;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .days-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .day-card {
+        aspect-ratio: 19 / 6;
+    }
+}
+
+/* ================= GALLERY UPGRADE ================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 22px;
+    background: #fff7e8;
+    box-shadow: 0 8px 20px rgba(100, 50, 20, 0.12);
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.gallery-item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 35px rgba(100, 50, 20, 0.25);
+}
+
+.gallery-placeholder {
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 75px;
+    background:
+        radial-gradient(circle at 30% 30%, #f6c43c, transparent 25%),
+        linear-gradient(135deg, #8f360d, #d47718);
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-placeholder {
+    transform: scale(1.08);
+}
+
+.gallery-item > p {
+    padding: 18px;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    color: #7b2d12;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================= GALLERY LIGHTBOX ================= */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(40, 15, 5, 0.92);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 18px;
+    box-shadow: 0 0 40px rgba(255, 200, 80, 0.35);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+}
+
+#lightboxCaption {
+    color: #ffd77a;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 18px;
+}
+/* ================= TELANGANA DASARA TRADITIONS ================= */
+
+.traditions-special {
+    background: #fff8eb;
+}
+
+.traditions-special-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 40px;
+}
+
+.tradition-special-card {
+    background: #fff;
+    padding: 30px 22px;
+    text-align: center;
+    border-radius: 22px;
+    border: 1px solid #f0d39a;
+    box-shadow: 0 8px 20px rgba(100, 50, 20, 0.10);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.tradition-special-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 30px rgba(100, 50, 20, 0.20);
+}
+
+.tradition-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.tradition-special-card h3 {
+    color: #8f360d;
+    margin-bottom: 12px;
+}
+
+.tradition-special-card p {
+    color: #6b4a35;
+    line-height: 1.7;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .traditions-special-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .traditions-special-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================= DASARA STORIES ================= */
+
+.dasara-story {
+    margin-top: 55px;
+    padding: 35px;
+    background: linear-gradient(135deg, #fff3d6, #fffaf0);
+    border-radius: 25px;
+    border: 1px solid #e6c77a;
+}
+
+.story-label {
+    text-align: center;
+    color: #a04a16;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.dasara-story h3 {
+    text-align: center;
+    color: #7b2d12;
+    font-size: 30px;
+    margin: 12px 0 30px;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.story-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(100, 50, 20, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 30px rgba(100, 50, 20, 0.20);
+}
+
+.story-icon {
+    font-size: 55px;
+    margin-bottom: 12px;
+}
+
+.story-card h4 {
+    color: #8f360d;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.story-card p {
+    color: #6b4a35;
+    line-height: 1.8;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dasara-story {
+        padding: 22px;
+    }
+
+    .dasara-story h3 {
+        font-size: 24px;
+    }
+}
+/* Alai Balai special highlight */
+
+.alai-balai-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.alai-balai-line {
+    margin-top: 18px;
+    padding: 10px 14px;
+    border-radius: 30px;
+    background: #fff0c7;
+    color: #8f360d;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+/* ================= JAMMI AAKU SPECIAL ================= */
+
+.jammi-special {
+    margin-top: 35px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: linear-gradient(135deg, #fff4d6, #fffaf0);
+    border: 1px solid #e6c77a;
+    border-radius: 22px;
+    box-shadow: 0 8px 20px rgba(100, 50, 20, 0.10);
+}
+
+.jammi-symbol {
+    font-size: 70px;
+    min-width: 90px;
+    text-align: center;
+}
+
+.jammi-content h3 {
+    color: #7b2d12;
+    font-size: 28px;
+    margin: 8px 0 12px;
+}
+
+.jammi-content p {
+    color: #6b4a35;
+    line-height: 1.7;
+}
+
+.jammi-quote {
+    margin-top: 15px;
+    padding: 12px 18px;
+    background: #fff0c7;
+    border-radius: 12px;
+    color: #8f360d;
+    font-weight: bold;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .jammi-special {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* Palapitta image */
+
+.tradition-special-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 18px;
+}
+/* ================= BACK TO TOP ================= */
+
+#backToTop {
+    display: none;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #8f360d;
+    color: #ffd77a;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 6px 18px rgba(100, 50, 20, 0.25);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#backToTop:hover {
+    transform: translateY(-5px);
+    background: #a94a16;
+}
+
+/* ================= ACTIVE NAVIGATION ================= */
+
+.navbar a.active {
+    color: #ffd77a;
+    font-weight: bold;
+    border-bottom: 2px solid #ffd77a;
+    padding-bottom: 6px;
+}
+
+/* ================= MOBILE NAVBAR ================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 15px;
+    }
+
+    .navbar nav a {
+        font-size: 14px;
+    }
+}
+/* ================= HAMBURGER MENU ================= */
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffd77a;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .navbar nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 0;
+    }
+
+    .navbar nav.show {
+        display: flex;
+    }
+}
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+}
+/* ================= BATHUKAMMA MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .bathukamma-visual {
+        width: 100%;
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .bathukamma-visual h3 {
+        font-size: 26px;
+    }
+
+    .bathukamma-visual p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+/* ================= BATHUKAMMA RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .bathukamma-art {
+        width: 220px;
+        height: 210px;
+        margin: 0 auto 25px;
+    }
+
+    .layer-1 {
+        width: 200px;
+    }
+
+    .layer-2 {
+        width: 175px;
+    }
+
+    .layer-3 {
+        width: 150px;
+    }
+
+    .layer-4 {
+        width: 120px;
+    }
+
+    .layer-5 {
+        width: 90px;
+    }
+
+    .flower-circle span {
+        font-size: 28px;
+    }
+
+    .bathukamma-visual h3 {
+        font-size: 26px;
+    }
+
+    .bathukamma-visual p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+/* ================= NAVARATRI DETAIL BOX ================= */
+
+.nav-detail-box {
+    margin: 35px auto 0;
+    max-width: 850px;
+    padding: 35px 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #fff8e7, #fff0c7);
+    border: 2px solid #e6b84c;
+    border-radius: 25px;
+    box-shadow: 0 12px 30px rgba(100, 50, 20, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-detail-box::before {
+    content: "🌸 🪔 🌸";
+    display: block;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+#detailDay {
+    color: #a04a16;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#detailName {
+    color: #7b2d12;
+    font-size: 32px;
+    margin: 10px 0 15px;
+}
+
+#detailText {
+    max-width: 700px;
+    margin: auto;
+    color: #6b4a35;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .nav-detail-box {
+        padding: 25px 18px;
+        margin-top: 25px;
+    }
+
+    #detailName {
+        font-size: 26px;
+    }
+
+    #detailText {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+}
+/* ================= NAVARATRI DETAIL BOX ================= */
+
+.day-details {
+    margin: 40px auto 0;
+    max-width: 850px;
+    padding: 35px 40px;
+    text-align: center;
+
+    background: linear-gradient(135deg, #fff8e7, #fff0c7);
+    border: 2px solid #e6b84c;
+    border-radius: 25px;
+
+    box-shadow: 0 12px 30px rgba(100, 50, 20, 0.15);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.day-details::before {
+    content: "🌸 🪔 🌸";
+    display: block;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+#detailDay {
+    display: inline-block;
+    color: #a04a16;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#detailName {
+    color: #7b2d12;
+    font-size: 32px;
+    margin: 10px 0 15px;
+}
+
+#detailText {
+    max-width: 700px;
+    margin: auto;
+    color: #6b4a35;
+    font-size: 16px;
+    line-height: 1.8;
+}
+/* ================= MASS TELANGANA NAVARATRI ================= */
+
+.day-details {
+    background:
+        linear-gradient(rgba(92, 30, 8, 0.92), rgba(55, 18, 5, 0.96)),
+        #7b2d12;
+
+    border: 3px solid #f5b72b;
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 0 #4a1607,
+        0 18px 35px rgba(45, 15, 5, 0.35);
+
+    padding: 38px 40px;
+    position: relative;
+}
+
+/* Telangana-style decorative border */
+
+.day-details::after {
+    content: "✦  🪔  ✦  🌼  ✦  🪔  ✦";
+    display: block;
+    margin-top: 22px;
+
+    color: #ffd45c;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+/* Day number */
+
+#detailDay {
+    color: #ffd45c;
+    background: #9e3f0e;
+
+    padding: 7px 18px;
+    border-radius: 30px;
+
+    border: 1px solid #f5b72b;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* Goddess name */
+
+#detailName {
+    color: #ffd45c;
+
+    font-size: 36px;
+    font-weight: 800;
+
+    margin: 18px 0 15px;
+
+    text-transform: uppercase;
+
+    text-shadow: 2px 3px 0 #4a1607;
+}
+
+/* Description */
+
+#detailText {
+    color: #fff3d0;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    max-width: 720px;
+    margin: auto;
+}
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .day-details {
+        margin-top: 30px;
+        padding: 25px 18px;
+    }
+
+    #detailName {
+        font-size: 26px;
+    }
+
+    #detailText {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+}
+/* ================= MASS TELANGANA HERO ================= */
+
+.hero {
+    position: relative;
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(75, 20, 5, 0.72),
+            rgba(130, 38, 5, 0.82)
+        ),
+        url("images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 6px solid #f5b72b;
+}
+
+/* Dark festival overlay */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 10%,
+            rgba(35, 8, 2, 0.55) 85%
+        );
+}
+
+/* Hero content */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+    padding: 40px 25px;
+}
+
+/* Small festival label */
+
+.hero-content .section-label {
+    color: #ffd45c;
+
+    font-weight: 800;
+    letter-spacing: 4px;
+
+    font-size: 15px;
+
+    text-shadow: 2px 2px 0 #4a1607;
+}
+
+/* Main heading */
+
+.hero h1 {
+    color: #ffd45c;
+
+    font-size: clamp(48px, 8vw, 88px);
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    line-height: 0.95;
+
+    margin: 20px 0;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        4px 4px 0 #7b2d12,
+        7px 7px 0 #3c1004;
+}
+
+/* Tagline */
+
+.hero p {
+    color: #fff1c7;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-shadow: 2px 2px 0 #4a1607;
+}
+
+/* Decorative festival line */
+
+.hero-content::after {
+    content: "🌼  🪔  ✦  🪔  🌼";
+
+    display: block;
+
+    margin-top: 30px;
+
+    color: #ffd45c;
+
+    font-size: 28px;
+
+    letter-spacing: 8px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 540px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        letter-spacing: 1px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-content .section-label {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+}
+/* =========================================================
+   🔥 MASS TELANGANA DASARA 2026 — FESTIVAL THEME
+   ========================================================= */
+
+/* ================= BODY ================= */
+
+body {
+    background: #3b1207;
+    color: #fff3d0;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    background:
+        linear-gradient(90deg, rgba(48, 10, 3, 0.98), rgba(125, 35, 5, 0.97));
+    border-bottom: 3px solid #f5b72b;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+}
+
+.logo {
+    color: #ffd45c;
+    text-shadow: 2px 2px 0 #5b1705;
+}
+
+.navbar nav a {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.navbar nav a:hover,
+.navbar a.active {
+    color: #ffd45c;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(48, 10, 3, 0.55),
+            rgba(102, 27, 4, 0.72)
+        ),
+        url("images/Bathukamma.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 6px solid #f5b72b;
+}
+
+.hero-overlay {
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 15%,
+            rgba(35, 5, 1, 0.72) 100%
+        );
+}
+
+.hero-content {
+    max-width: 1000px;
+}
+
+.festival-small {
+    color: #ffd45c;
+    font-weight: 900;
+    text-shadow: 2px 2px 0 #4a1003;
+}
+
+.hero h1 {
+    color: #fff0a8;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    text-shadow:
+        4px 4px 0 #8c2706,
+        7px 7px 0 #3c0b02;
+}
+
+.hero h1 span {
+    color: #ffd45c;
+}
+
+.hero-description {
+    color: #fff8df;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #401005;
+}
+
+.hero-button {
+    background: #f5b72b;
+    color: #541405;
+    border: 2px solid #ffe28a;
+    box-shadow: 0 8px 0 #7b2505;
+}
+
+.hero-button:hover {
+    background: #fff0a8;
+    transform: translateY(-5px);
+}
+
+
+/* ================= ALL SECTION HEADINGS ================= */
+
+.section-label {
+    color: #e99b18;
+    font-weight: 900;
+}
+
+.section h2,
+.countdown-section h2 {
+    color: #8f2608;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    background:
+        linear-gradient(
+            rgba(255, 245, 218, 0.94),
+            rgba(255, 231, 183, 0.94)
+        ),
+        url("images/flowers.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.about-cards {
+    position: relative;
+}
+
+.about-card {
+    background: rgba(255, 250, 235, 0.96);
+    border: 2px solid #d9921b;
+
+    box-shadow:
+        0 8px 0 #8b2b08,
+        0 15px 30px rgba(70, 20, 5, 0.22);
+}
+
+.about-card:hover {
+    transform: translateY(-12px) scale(1.02);
+}
+
+.about-card h3 {
+    color: #9b2e08;
+    font-weight: 900;
+}
+
+
+/* ================= BATHUKAMMA ================= */
+
+.bathukamma-section {
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(77, 18, 4, 0.82),
+            rgba(133, 39, 5, 0.88)
+        ),
+        url("images/Bathukamma.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.bathukamma-text h2 {
+    color: #ffd45c;
+    font-weight: 900;
+    text-shadow: 3px 3px 0 #541304;
+}
+
+.bathukamma-text > p {
+    color: #fff1cf;
+}
+
+.bathukamma-points div {
+    background: rgba(255, 246, 218, 0.96);
+    border: 2px solid #e2a321;
+
+    box-shadow:
+        0 7px 0 #762305,
+        0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.bathukamma-visual {
+    background:
+        linear-gradient(
+            rgba(62, 12, 3, 0.55),
+            rgba(112, 27, 4, 0.75)
+        ),
+        url("images/flowers.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border: 3px solid #f5b72b;
+}
+
+
+/* ================= TELANGANA TRADITIONS ================= */
+
+.traditions-special {
+    background:
+        linear-gradient(
+            rgba(255, 244, 213, 0.93),
+            rgba(246, 210, 145, 0.93)
+        ),
+        url("images/jammi-aaku.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.tradition-special-card {
+    background: rgba(255, 249, 230, 0.97);
+    border: 2px solid #d9961d;
+
+    box-shadow:
+        0 8px 0 #7b2706,
+        0 16px 30px rgba(75, 20, 5, 0.22);
+}
+
+.tradition-special-card:hover {
+    transform: translateY(-12px) scale(1.02);
+}
+
+.tradition-special-card h3 {
+    color: #962d08;
+    font-weight: 900;
+}
+
+.jammi-special {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(103, 35, 5, 0.96),
+            rgba(55, 14, 3, 0.98)
+        );
+
+    border: 3px solid #e8a822;
+    box-shadow:
+        0 10px 0 #3d0c02,
+        0 18px 30px rgba(0, 0, 0, 0.25);
+}
+
+.jammi-content h3,
+.jammi-content p {
+    color: #fff1ca;
+}
+
+.jammi-quote {
+    background: #e6a51e;
+    color: #541304;
+}
+
+
+/* ================= NAVARATRI ================= */
+
+.navaratri {
+    background:
+        linear-gradient(
+            rgba(53, 9, 3, 0.88),
+            rgba(101, 25, 4, 0.92)
+        ),
+        url("images/featival-lights.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.navaratri h2 {
+    color: #ffd45c;
+    text-shadow: 3px 3px 0 #4c1003;
+}
+
+.navaratri .section-text {
+    color: #ffeac0;
+}
+
+.day-card {
+    background:
+        linear-gradient(
+            rgba(255, 247, 225, 0.96),
+            rgba(255, 224, 164, 0.96)
+        );
+
+    border: 3px solid #d9961d;
+
+    box-shadow:
+        0 7px 0 #721f05,
+        0 14px 28px rgba(0, 0, 0, 0.25);
+}
+
+.day-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+        0 10px 0 #721f05,
+        0 20px 35px rgba(0, 0, 0, 0.35);
+}
+
+.day-card.active {
+    border: 3px solid #ffd45c;
+    box-shadow:
+        0 0 0 3px #8b2706,
+        0 12px 35px rgba(255, 190, 40, 0.5);
+}
+
+.day-card h3 {
+    color: #8c2807;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+
+/* ================= NAVARATRI DETAIL ================= */
+
+.day-details {
+    background:
+        linear-gradient(
+            rgba(67, 12, 3, 0.96),
+            rgba(112, 27, 4, 0.97)
+        );
+
+    border: 3px solid #f5b72b;
+
+    box-shadow:
+        0 10px 0 #3d0b02,
+        0 20px 35px rgba(0, 0, 0, 0.35);
+}
+
+#detailDay {
+    color: #ffd45c;
+    background: #982f08;
+    border: 1px solid #f5b72b;
+}
+
+#detailName {
+    color: #ffd45c;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 #3c0b02;
+}
+
+#detailText {
+    color: #fff0cf;
+}
+
+
+/* ================= OLD TRADITIONS ================= */
+
+.traditions {
+    background:
+        linear-gradient(
+            rgba(255, 244, 215, 0.94),
+            rgba(245, 211, 158, 0.94)
+        ),
+        url("images/palapitta.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.tradition {
+    background: rgba(255, 250, 235, 0.97);
+    border: 2px solid #d9961d;
+
+    box-shadow:
+        0 7px 0 #7b2706,
+        0 14px 25px rgba(70, 20, 5, 0.2);
+}
+
+.tradition:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.tradition h3 {
+    color: #942b07;
+    font-weight: 900;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery {
+    background:
+        linear-gradient(
+            rgba(48, 9, 3, 0.82),
+            rgba(95, 22, 4, 0.88)
+        ),
+        url("images/featival-lights.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery h2 {
+    color: #ffd45c;
+    text-shadow: 3px 3px 0 #3d0b02;
+}
+
+.gallery .section-text {
+    color: #ffeac4;
+}
+
+.gallery-item {
+    background: #fff3d0;
+    border: 3px solid #d9961d;
+
+    box-shadow:
+        0 8px 0 #5e1704,
+        0 18px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item:hover {
+    transform: translateY(-12px) scale(1.02);
+}
+
+
+/* ================= COUNTDOWN ================= */
+
+.countdown-section {
+    background:
+        linear-gradient(
+            rgba(48, 8, 2, 0.78),
+            rgba(120, 28, 4, 0.86)
+        ),
+        url("images/celebrations.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-top: 5px solid #f5b72b;
+    border-bottom: 5px solid #f5b72b;
+}
+
+.countdown-section .section-label {
+    color: #ffd45c;
+}
+
+.countdown div {
+    background: rgba(35, 7, 2, 0.7);
+    border: 2px solid #e9ad2b;
+
+    box-shadow:
+        0 7px 0 #4a1003,
+        0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.countdown span {
+    color: #ffd45c;
+    font-size: 52px;
+    text-shadow: 3px 3px 0 #6b1c04;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background:
+        linear-gradient(
+            rgba(35, 7, 2, 0.96),
+            rgba(72, 17, 3, 0.98)
+        ),
+        url("images/featival-lights.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-top: 4px solid #f5b72b;
+}
+
+.footer-logo {
+    color: #ffd45c;
+    text-shadow: 2px 2px 0 #6b1c04;
+}
+
+
+/* ================= EXTRA FESTIVAL GLOW ================= */
+
+.section,
+.bathukamma-section,
+.countdown-section {
+    position: relative;
+}
+
+.section::after,
+.bathukamma-section::after {
+    content: "✦  🌼  ✦  🪔  ✦  🌼  ✦";
+
+    display: block;
+    text-align: center;
+
+    margin-top: 45px;
+
+    color: #d99018;
+    font-size: 20px;
+    letter-spacing: 5px;
+
+    opacity: 0.85;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .section,
+    .bathukamma-section,
+    .countdown-section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .day-card {
+        box-shadow:
+            0 5px 0 #721f05,
+            0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+}
+/* =========================================================
+   🔥 MASS TELANGANA DASARA COUNTDOWN
+   ========================================================= */
+
+.countdown-section {
+    position: relative;
+    padding: 80px 6%;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(55, 10, 2, 0.78), rgba(105, 25, 4, 0.88)),
+        url("images/featival-lights.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    border-top: 5px solid #f5b72b;
+    border-bottom: 5px solid #f5b72b;
+}
+
+/* Heading */
+.countdown-section h2 {
+    color: #ffd45c;
+    font-size: 38px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0 #4a1003;
+    margin-bottom: 12px;
+}
+
+/* Small heading */
+.countdown-section .section-label {
+    color: #ffe28a;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* Countdown boxes */
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.countdown div {
+    min-width: 125px;
+    padding: 22px 18px;
+
+    background:
+        linear-gradient(
+            rgba(70, 12, 3, 0.94),
+            rgba(125, 30, 5, 0.94)
+        );
+
+    border: 3px solid #f5b72b;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 0 #4a1003,
+        0 15px 30px rgba(0, 0, 0, 0.35);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.countdown div:hover {
+    transform: translateY(-8px) scale(1.05);
+
+    box-shadow:
+        0 12px 0 #4a1003,
+        0 20px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* Numbers */
+.countdown span {
+    display: block;
+    color: #ffd45c;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+
+    text-shadow:
+        3px 3px 0 #6b1c04;
+}
+
+/* Labels */
+.countdown small {
+    display: block;
+    margin-top: 12px;
+
+    color: #fff0cf;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Festival decoration */
+.countdown-section::after {
+    content: "✦  🌼  🪔  🌼  ✦";
+    display: block;
+
+    margin-top: 35px;
+
+    color: #ffd45c;
+    font-size: 22px;
+    letter-spacing: 6px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .countdown-section {
+        padding: 60px 5%;
+        background-attachment: scroll;
+    }
+
+    .countdown-section h2 {
+        font-size: 29px;
+    }
+
+    .countdown {
+        gap: 14px;
+        margin-top: 30px;
+    }
+
+    .countdown div {
+        min-width: 115px;
+        padding: 20px 12px;
+    }
+
+    .countdown span {
+        font-size: 40px;
+    }
+
+    .countdown small {
+        font-size: 11px;
+    }
+}
+/* ================= FINAL COUNTDOWN DESIGN ================= */
+
+.countdown-section {
+    padding: 90px 6% !important;
+    text-align: center !important;
+
+    background:
+        linear-gradient(rgba(55, 10, 2, 0.75), rgba(105, 25, 4, 0.88)),
+        url("images/featival-lights.jpg") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+
+    border-top: 5px solid #f5b72b !important;
+    border-bottom: 5px solid #f5b72b !important;
+}
+
+.countdown-section h2 {
+    color: #ffd45c !important;
+    font-size: 40px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 #4a1003;
+}
+
+.countdown {
+    max-width: 900px !important;
+    margin: 45px auto 0 !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 22px !important;
+}
+
+.countdown div {
+    padding: 25px 15px !important;
+
+    background: linear-gradient(
+        rgba(70, 12, 3, 0.95),
+        rgba(125, 30, 5, 0.95)
+    ) !important;
+
+    border: 3px solid #f5b72b !important;
+    border-radius: 18px !important;
+
+    box-shadow:
+        0 8px 0 #4a1003,
+        0 15px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+.countdown span {
+    display: block !important;
+    color: #ffd45c !important;
+    font-size: 52px !important;
+    font-weight: 900 !important;
+    text-shadow: 3px 3px 0 #6b1c04;
+}
+
+.countdown small {
+    display: block !important;
+    margin-top: 12px !important;
+    color: #fff0cf !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .countdown-section {
+        padding: 65px 5% !important;
+    }
+
+    .countdown-section h2 {
+        font-size: 30px !important;
+    }
+
+    .countdown {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 18px !important;
+    }
+
+    .countdown div {
+        padding: 22px 10px !important;
+    }
+
+    .countdown span {
+        font-size: 40px !important;
+    }
+}
